@@ -1,0 +1,18 @@
+Dataset: Bitcoin Blocks Daily Summary
+Source: Google BigQuery (public dataset: bigquery-public-data.crypto_bitcoin.blocks)
+Period: 2020-01-01 → present
+Granularity: 1 day (aggregated from per-block data)
+
+Columns:
+- day                 : Calendar date (UTC)
+- blocks_count        : Number of blocks mined that day
+- total_size_bytes    : Total size of all blocks in bytes
+- total_txs           : Total number of transactions included in blocks
+- avg_txs_per_block   : Average number of transactions per block that day
+- avg_block_size      : Average block size in bytes that day
+
+Notes:
+- Derived directly from block-level data.
+- Daily values are aggregates (SUM or AVG) computed over all blocks in that day.
+- Difficulty and weight not included in this file (can be added if needed).
+- Useful for on-chain activity analysis (blockspace usage, daily throughput).

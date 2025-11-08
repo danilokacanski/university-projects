@@ -1,0 +1,18 @@
+Dataset: Binance BTCUSDT Perpetual Futures — Official 8-Hour Funding Rates
+Source: Binance Futures API (fapi/v1/fundingRate)
+Period: 2020-01-01 → present
+Granularity: 8-hour intervals (Binance funding schedule)
+
+Columns:
+- symbol        : Futures trading pair (here BTCUSDT perpetual)
+- fundingTime   : UTC timestamp of the funding event (every 8h)
+- fundingRate   : Funding rate applied at that timestamp (decimal)
+- markPrice     : Mark price at funding time (NULL in this export, can be included if available)
+
+Notes:
+- This is the **canonical funding rate dataset** used by Binance for PnL calculations.
+- fundingRate values show who pays who:
+  • Positive → longs pay shorts
+  • Negative → shorts pay longs
+- markPrice is NULL here, but if available, it anchors the funding calculation.
+- For analysis, you can resample/aggregate this into daily averages or merge with OI, price, and taker ratios.

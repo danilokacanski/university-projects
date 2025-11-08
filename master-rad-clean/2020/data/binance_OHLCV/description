@@ -1,0 +1,20 @@
+Dataset: BTC/USDT OHLCV (Hourly)
+Source: Binance Exchange
+Period: 2020-01-01 → present
+Granularity: 1 hour
+
+Columns:
+- timestamp (UTC) : Start of the 1h candle
+- open            : Price at start of the hour
+- high            : Highest price during the hour
+- low             : Lowest price during the hour
+- close           : Price at end of the hour
+- volume          : Quote asset volume (BTC traded in USDT terms)
+- symbol          : Trading pair (here BTC/USDT)
+- exchange        : Exchange name (here binance)
+
+Notes:
+- Data is already aligned to hourly candles.
+- Timezone is UTC (no daylight saving adjustments).
+- Volume is as reported by Binance (may include internal wash trades).
+- Can be resampled to daily by aggregating (OHLC with first/last/min/max and volume sum).

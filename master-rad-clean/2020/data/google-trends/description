@@ -1,0 +1,9 @@
+1.	google_trends_bitcoin_daily.csv
+	•	Keyword: “Bitcoin”
+	•	Daily normalized search interest scores (0–100).
+2.	google_trends_btc_daily.csv
+	•	Keyword: “BTC”
+	•	Daily normalized search interest scores (0–100).
+3.	google_trends_crypto_daily.csv
+	•	Keyword: “crypto”
+	•	Daily normalized search interest scores (0–100).

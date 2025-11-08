@@ -1,0 +1,18 @@
+Dataset: Binance BTCUSDT Perpetual Futures — Funding Rate History
+Source: Binance Futures API (fapi/v1/fundingRate)
+Period: 2020-01-01 → present
+Granularity: 1 hour (funding rate snapshots)
+
+Columns:
+- timestamp                : UTC datetime (hourly intervals)
+- fundingRate              : Raw funding rate (per interval, decimal)
+- funding_annualized_pct   : Annualized funding rate (%) = fundingRate * 24 * 365 * 100
+- markPrice                : NULL in this file (not provided in current query)
+- sumOpenInterest          : NULL in this file
+- sumOpenInterestValue     : NULL in this file
+
+Notes:
+- Only funding-related columns contain valid data. Open interest / mark price columns are placeholders but empty.
+- FundingRate is typically applied every 8 hours on Binance; here it is interpolated hourly.
+- Funding_annualized_pct can be useful to detect periods of extreme bullish or bearish sentiment.
+- Combine with BTC spot prices or futures OI for richer analysis.

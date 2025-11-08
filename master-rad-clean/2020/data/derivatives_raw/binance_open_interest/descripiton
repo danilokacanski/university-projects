@@ -1,0 +1,17 @@
+Dataset: Binance BTCUSDT Perpetual Futures — Open Interest (Hourly)
+Source: Binance Futures API (fapi/v1/openInterestHist or custom aggregation)
+Period: 2020-01-01 → present
+Granularity: 1-hour intervals
+
+Columns:
+- symbol               : Trading pair (BTCUSDT perpetual)
+- timestamp            : UTC timestamp for the observation (hourly)
+- sumOpenInterest      : Total open interest (in contracts, here ~BTC)
+- sumOpenInterestValue : Open interest notional value (in USDT)
+
+Notes:
+- Open interest = number of outstanding contracts (longs + shorts).
+- sumOpenInterestValue = sumOpenInterest × mark price (approx).
+- Rising OI often signals stronger market conviction, falling OI suggests position closing.
+- This can be merged with funding rate data for leverage/sentiment analysis.
+- Hourly frequency is standard, but you can aggregate daily for long-term studies.
