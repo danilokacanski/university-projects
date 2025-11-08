@@ -1,0 +1,2 @@
+70
+Standardize targets and train a linear regressor, then invert scaling for a real prediction

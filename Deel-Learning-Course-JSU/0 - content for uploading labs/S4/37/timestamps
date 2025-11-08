@@ -1,0 +1,4 @@
+saving - 180
+Normalize Data, Train Linear Model, and Save Model + Scaling Artifacts
+loading - 265
+Load Saved Artifacts and Generate Denormalized Predictions
