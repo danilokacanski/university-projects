@@ -1,0 +1,250 @@
+Model {
+  Name			  "Meshsin"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "5"
+  SolverMode		  "Auto"
+  Solver		  "ode45"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Sat Oct 25 18:05:24 2003"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Sun Nov 02 20:20:41 2003"
+  ModelVersionFormat	  "1.%<AutoIncrement:16>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "Meshsin"
+    Location		    [161, 292, 826, 593]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    off
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Fcn
+      Name		      "Fcn"
+      Position		      [75, 85, 135, 115]
+      Expr		      "sin(u)"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain"
+      Position		      [175, 85, 205, 115]
+      Gain		      "-10"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [275, 84, 305, 116]
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "x20"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator1"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [405, 84, 435, 116]
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "x10"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [470, 136, 475, 174]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      Position		      [520, 140, 580, 170]
+      VariableName	      "yout"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Line {
+      Labels		      [0, 0]
+      SrcBlock		      "Integrator"
+      SrcPort		      1
+      Points		      [0, -5; 35, 0]
+      Branch {
+	Points			[45, 0]
+	DstBlock		"Integrator1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 70]
+	DstBlock		"Mux"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      DstBlock		      "To Workspace"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Integrator1"
+      SrcPort		      1
+      Points		      [0, -5; 5, 0]
+      Branch {
+	Points			[10, 0]
+	DstBlock		"Mux"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -50; -385, 0]
+	DstBlock		"Fcn"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Fcn"
+      SrcPort		      1
+      DstBlock		      "Gain"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gain"
+      SrcPort		      1
+      DstBlock		      "Integrator"
+      DstPort		      1
+    }
+  }
+}
